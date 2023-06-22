@@ -30,18 +30,18 @@ namespace Disconnected_Environment
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtNIM = new System.Windows.Forms.Label();
+            this.cbxNama = new System.Windows.Forms.ComboBox();
+            this.cbxStatusMahasiswa = new System.Windows.Forms.ComboBox();
+            this.cbxTahunMasuk = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,14 +55,15 @@ namespace Disconnected_Environment
             this.dataGridView1.Size = new System.Drawing.Size(455, 197);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // btnOpen
             // 
-            this.button1.Location = new System.Drawing.Point(570, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Open";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOpen.Location = new System.Drawing.Point(570, 13);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 41);
+            this.btnOpen.TabIndex = 1;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // label1
             // 
@@ -100,86 +101,90 @@ namespace Disconnected_Environment
             this.label4.TabIndex = 5;
             this.label4.Text = "Tahun Masuk";
             // 
-            // label5
+            // txtNIM
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(291, 266);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "txtNIM";
+            this.txtNIM.AutoSize = true;
+            this.txtNIM.Location = new System.Drawing.Point(291, 266);
+            this.txtNIM.Name = "txtNIM";
+            this.txtNIM.Size = new System.Drawing.Size(46, 17);
+            this.txtNIM.TabIndex = 6;
+            this.txtNIM.Text = "txtNIM";
             // 
-            // comboBox1
+            // cbxNama
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(294, 225);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 7;
+            this.cbxNama.FormattingEnabled = true;
+            this.cbxNama.Location = new System.Drawing.Point(294, 225);
+            this.cbxNama.Name = "cbxNama";
+            this.cbxNama.Size = new System.Drawing.Size(121, 24);
+            this.cbxNama.TabIndex = 7;
             // 
-            // comboBox2
+            // cbxStatusMahasiswa
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(294, 299);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 8;
+            this.cbxStatusMahasiswa.FormattingEnabled = true;
+            this.cbxStatusMahasiswa.Location = new System.Drawing.Point(294, 299);
+            this.cbxStatusMahasiswa.Name = "cbxStatusMahasiswa";
+            this.cbxStatusMahasiswa.Size = new System.Drawing.Size(121, 24);
+            this.cbxStatusMahasiswa.TabIndex = 8;
             // 
-            // comboBox3
+            // cbxTahunMasuk
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(294, 334);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 9;
+            this.cbxTahunMasuk.FormattingEnabled = true;
+            this.cbxTahunMasuk.Location = new System.Drawing.Point(294, 334);
+            this.cbxTahunMasuk.Name = "cbxTahunMasuk";
+            this.cbxTahunMasuk.Size = new System.Drawing.Size(121, 24);
+            this.cbxTahunMasuk.TabIndex = 9;
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(444, 225);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 36);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(444, 225);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 36);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button3
+            // btnClear
             // 
-            this.button3.Location = new System.Drawing.Point(444, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 33);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Clear";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(444, 283);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 33);
+            this.btnClear.TabIndex = 11;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Location = new System.Drawing.Point(444, 334);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 33);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Save";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(444, 334);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 33);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.cbxTahunMasuk);
+            this.Controls.Add(this.cbxStatusMahasiswa);
+            this.Controls.Add(this.cbxNama);
+            this.Controls.Add(this.txtNIM);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form4";
             this.Text = "Data Status Mahasiswa";
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,17 +194,17 @@ namespace Disconnected_Environment
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label txtNIM;
+        private System.Windows.Forms.ComboBox cbxNama;
+        private System.Windows.Forms.ComboBox cbxStatusMahasiswa;
+        private System.Windows.Forms.ComboBox cbxTahunMasuk;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSave;
     }
 }
