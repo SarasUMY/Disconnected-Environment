@@ -36,7 +36,6 @@ namespace Disconnected_Environment
             dataAdapter.Fill(ds);
 
             this.customerbindingSource.DataSource = ds.Tables[0];
-
         }
     }
 }
